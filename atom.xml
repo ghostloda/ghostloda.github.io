@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://ghostloda.github.io</id>
     <title>Loda</title>
-    <updated>2020-03-05T05:40:19.392Z</updated>
+    <updated>2020-03-05T09:03:40.736Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://ghostloda.github.io"/>
     <link rel="self" href="https://ghostloda.github.io/atom.xml"/>
@@ -10,6 +10,31 @@
     <logo>https://ghostloda.github.io/images/avatar.png</logo>
     <icon>https://ghostloda.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, Loda</rights>
+    <entry>
+        <title type="html"><![CDATA[读《代码之外的功夫：程序员精进之路》]]></title>
+        <id>https://ghostloda.github.io/post/du-lesslessdai-ma-zhi-wai-de-gong-fu-cheng-xu-yuan-jing-jin-zhi-lu-greatergreater/</id>
+        <link href="https://ghostloda.github.io/post/du-lesslessdai-ma-zhi-wai-de-gong-fu-cheng-xu-yuan-jing-jin-zhi-lu-greatergreater/">
+        </link>
+        <updated>2020-03-05T08:52:41.000Z</updated>
+        <content type="html"><![CDATA[<ul>
+<li>利用线框图表达功能需求</li>
+</ul>
+<p>如何开始项目的第一轮开发。通常在这一阶段，绘制线框图非常有帮助。你可以通过线框图向大家解释待开发应用的基本结构，同时让大家都了解需要完成什么工作，以免因过度关注技术细节而迷失了大方向。</p>
+<ul>
+<li>
+<p>忠告与提醒<br>
+.描述问题的原始资料一般都是零散的语句、示例和参考材料。为了理解这些资料，你需要记笔记，排除噪声信息，只留下最关键的细节。<br>
+· 每个问题的背后都有一堆简单的子问题，你早已知道如何解决它们。要将问题不断拆分，直到你能辩认出构成它的子问题为止。<br>
+· 难题由很多活动部分组成。先观察各个部分如何联系在一起，而不要管具体的实现细节。在写代码之前，先用纸笔解决部分问题。<br>
+· 在无效数据集上运用有效规则可能会得到难以调试的混乱结果。不要假设输入数据集的格式正确。在处理任何数据集之前，都要预先检查，以避免出现“垃圾进、垃圾出”的情况。</p>
+</li>
+<li>
+<p>自底向上的设计<br>
+从实现最小化功能入手,自底向上进行系统设计的一个难点是将对象之间的纽带解开，以便一小部分一小部分地进行实现，而不是一次实现一整块。这个技能非常重要，因为它有助于实现增量式设计。</p>
+</li>
+</ul>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[牢骚]]></title>
         <id>https://ghostloda.github.io/post/lao-sao/</id>
