@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://ghostloda.github.io</id>
     <title>Loda</title>
-    <updated>2020-03-05T09:41:05.539Z</updated>
+    <updated>2020-03-06T01:35:51.888Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://ghostloda.github.io"/>
     <link rel="self" href="https://ghostloda.github.io/atom.xml"/>
@@ -10,6 +10,50 @@
     <logo>https://ghostloda.github.io/images/avatar.png</logo>
     <icon>https://ghostloda.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, Loda</rights>
+    <entry>
+        <title type="html"><![CDATA[关于docker挂载文件的生效问题的疑惑]]></title>
+        <id>https://ghostloda.github.io/post/guan-yu-docker-gua-zai-wen-jian-de-sheng-xiao-wen-ti-de-yi-huo/</id>
+        <link href="https://ghostloda.github.io/post/guan-yu-docker-gua-zai-wen-jian-de-sheng-xiao-wen-ti-de-yi-huo/">
+        </link>
+        <updated>2020-03-06T01:10:32.000Z</updated>
+        <content type="html"><![CDATA[<p>docker直接修改挂载文件，理论上是可以直接反应在容器内部的，他们共享一个文件，为何在宿主机内修改无效呢，而你以为只有重启才会使修改生效？其实不是的。</p>
+<p>如果直接用vi编辑宿主机文件,这是因为用vi编辑保存时会修改文件的inode，<code>Linux</code>系统内部不使用文件名，而是使用<code>inode号码</code>识别文件。对于系统来说文件名只是<code>inode号码</code>便于识别的别称</p>
+<p>修改前：</p>
+<pre><code>root@rancher:/home/lcx/aimp.fornt# stat  config.js 
+  File: config.js
+  Size: 215       	Blocks: 8          IO Block: 4096   regular file
+Device: 802h/2050d	Inode: 1577292     Links: 1
+Access: (0644/-rw-r--r--)  Uid: ( 1000/     lcx)   Gid: ( 1000/     lcx)
+Access: 2020-03-06 01:01:28.635119676 +0000
+Modify: 2020-03-06 01:01:21.855586110 +0000
+Change: 2020-03-06 01:01:21.855586110 +0000
+ Birth: -
+
+</code></pre>
+<p>使用vi修改</p>
+<pre><code> vi nginx.conf
+</code></pre>
+<p>修改后，可以发现Inode变了。</p>
+<pre><code>root@rancher:/home/lcx/aimp.fornt# stat  config.js 
+  File: config.js
+  Size: 215       	Blocks: 8          IO Block: 4096   regular file
+Device: 802h/2050d	Inode: 1579271     Links: 1
+Access: (0644/-rw-r--r--)  Uid: ( 1000/     lcx)   Gid: ( 1000/     lcx)
+Access: 2020-03-06 01:23:28.188175929 +0000
+Modify: 2020-03-06 01:23:28.188175929 +0000
+Change: 2020-03-06 01:23:28.196175914 +0000
+ Birth: -
+root@rancher:/home/lcx/aimp.fornt# 
+
+</code></pre>
+<p>正确操作，使用cat不会更改inode</p>
+<pre><code># cp config.js config2.js 
+# vi config2.js
+# cat config2.js &gt; config.js
+</code></pre>
+<p><a href="https://www.cnblogs.com/llife/p/11470668.html">更多关于Inode阅读</a></p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[读《代码之外的功夫：程序员精进之路》]]></title>
         <id>https://ghostloda.github.io/post/du-lesslessdai-ma-zhi-wai-de-gong-fu-cheng-xu-yuan-jing-jin-zhi-lu-greatergreater/</id>
