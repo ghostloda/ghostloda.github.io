@@ -8,7 +8,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="shortcut icon" href="https://ghostloda.github.io/favicon.ico?v=1583459055160">
+<link rel="shortcut icon" href="https://ghostloda.github.io/favicon.ico?v=1583459238299">
 <link rel="stylesheet" href="https://ghostloda.github.io/styles/main.css">
 
 
@@ -24,8 +24,10 @@
 
 
 
-    <meta name="description" content="docker直接修改挂载文件，理论上是可以直接反应在容器内部的，他们共享一个文件，为何在宿主机内修改无效呢，而你以为只有重启才会使修改生效？其实不是的。
-如果直接用vi编辑宿主机文件,这是因为用vi编辑保存时会修改文件的inode，Linu..." />
+    <meta name="description" content="
+
+docker直接修改挂载文件，理论上是可以直接反应在容器内部的，他们共享一个文件，为何在宿主机内修改无效呢，而你以为只有重启才会使修改生效？其实不是的。
+如果直接用vi编辑宿主机文件,这是因为用vi编辑保存时会修改文件的inode，Li..." />
     <meta name="keywords" content="" />
   </head>
   <body>
@@ -35,7 +37,7 @@
   <div class="top-container" data-aos="fade-right">
     <div class="top-header-container">
       <a class="site-title-container" href="https://ghostloda.github.io">
-        <img src="https://ghostloda.github.io/images/avatar.png?v=1583459055160" class="site-logo">
+        <img src="https://ghostloda.github.io/images/avatar.png?v=1583459238299" class="site-logo">
         <h1 class="site-title">Loda</h1>
       </a>
       <div class="menu-btn" @click="menuVisible = !menuVisible">
@@ -100,8 +102,13 @@
             <h2 class="post-title">关于docker挂载文件的生效问题的疑惑</h2>
             <div class="post-date">2020-03-06</div>
             
+              <div class="feature-container" style="background-image: url('https://ghostloda.github.io/post-images/guan-yu-docker-gua-zai-wen-jian-de-sheng-xiao-wen-ti-de-yi-huo.jpg')">
+              </div>
+            
             <div class="post-content" v-pre>
-              <p>docker直接修改挂载文件，理论上是可以直接反应在容器内部的，他们共享一个文件，为何在宿主机内修改无效呢，而你以为只有重启才会使修改生效？其实不是的。</p>
+              <figure data-type="image" tabindex="1"><img src="https://ghostloda.github.io/post-images/1583459150348.jpg" alt="" loading="lazy"></figure>
+<!-- more -->
+<p>docker直接修改挂载文件，理论上是可以直接反应在容器内部的，他们共享一个文件，为何在宿主机内修改无效呢，而你以为只有重启才会使修改生效？其实不是的。</p>
 <p>如果直接用vi编辑宿主机文件,这是因为用vi编辑保存时会修改文件的inode，<code>Linux</code>系统内部不使用文件名，而是使用<code>inode号码</code>识别文件。对于系统来说文件名只是<code>inode号码</code>便于识别的别称</p>
 <p>修改前：</p>
 <pre><code>root@rancher:/home/lcx/aimp.fornt# stat  config.js 
