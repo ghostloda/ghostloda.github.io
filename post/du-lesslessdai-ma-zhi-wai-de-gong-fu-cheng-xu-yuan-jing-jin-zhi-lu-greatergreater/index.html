@@ -8,7 +8,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="shortcut icon" href="https://ghostloda.github.io/favicon.ico?v=1583459417397">
+<link rel="shortcut icon" href="https://ghostloda.github.io/favicon.ico?v=1583832931884">
 <link rel="stylesheet" href="https://ghostloda.github.io/styles/main.css">
 
 
@@ -41,7 +41,7 @@
   <div class="top-container" data-aos="fade-right">
     <div class="top-header-container">
       <a class="site-title-container" href="https://ghostloda.github.io">
-        <img src="https://ghostloda.github.io/images/avatar.png?v=1583459417397" class="site-logo">
+        <img src="https://ghostloda.github.io/images/avatar.png?v=1583832931884" class="site-logo">
         <h1 class="site-title">Loda</h1>
       </a>
       <div class="menu-btn" @click="menuVisible = !menuVisible">
@@ -121,7 +121,13 @@
 </li>
 <li>
 <p>自底向上的设计<br>
-从实现最小化功能入手,自底向上进行系统设计的一个难点是将对象之间的纽带解开，以便一小部分一小部分地进行实现，而不是一次实现一整块。这个技能非常重要，因为它有助于实现增量式设计。</p>
+从实现最小化功能入手,自底向上进行系统设计的一个难点是将对象之间的纽带解开，以便一小部分一小部分地进行实现，而不是一次实现一整块。这个技能非常重要，因为它有助于实现增量式设计。<br>
+推迟决策：推迟决策确实是自底向上设计的重要部分。过早提取对象，然后尝试去想象未来的使用情况，可能导致接口变得乱七八糟；一旦考虑实际需求，就能更轻松的进行接口设计。</p>
+</li>
+<li>
+<p>自底向上与自顶向下的取舍<br>
+自顶向下的设计方法中，你一开始就会考虑可支持的机器类型，然后再去创建满足这些类型的抽象层。这样做可以让系统变得更容易集成，但对于简单情况而言，可能会让代码过于复杂，因为需要提前做更多的规划。<br>
+在实际应用中，自底向上和自顶向下是相辅相成的。自底向上的设计方法有利于发掘新的设计理念，同时让设计保持简洁。当你遭遇死胡同或碰到难点时，自顶向下的设计方法可以帮助你从整体上思考问题，将事物之间的联系统一起来。两种设计方法并非水火不容，它们只是用途不同。</p>
 </li>
 </ul>
 
