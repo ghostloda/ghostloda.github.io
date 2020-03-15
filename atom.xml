@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://ghostloda.github.io</id>
     <title>Loda</title>
-    <updated>2020-03-10T09:59:15.331Z</updated>
+    <updated>2020-03-15T10:27:37.687Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://ghostloda.github.io"/>
     <link rel="self" href="https://ghostloda.github.io/atom.xml"/>
@@ -18,8 +18,9 @@
         <updated>2020-03-06T01:10:32.000Z</updated>
         <content type="html"><![CDATA[<p>docker直接修改挂载文件，理论上是可以直接反应在容器内部的，他们共享一个文件，为何在宿主机内修改无效呢，而你以为只有重启才会使修改生效？其实不是的。</p>
 <p>如果直接用vi编辑宿主机文件,这是因为用vi编辑保存时会修改文件的inode，<code>Linux</code>系统内部不使用文件名，而是使用<code>inode号码</code>识别文件。对于系统来说文件名只是<code>inode号码</code>便于识别的别称</p>
-<p>修改前：</p>
-<pre><code>root@rancher:/home/lcx/aimp.fornt# stat  config.js 
+<p>修改前：<br>
+l</p>
+<pre><code>root@rancher:/home/llx/test# stat  config.js 
   File: config.js
   Size: 215       	Blocks: 8          IO Block: 4096   regular file
 Device: 802h/2050d	Inode: 1577292     Links: 1
@@ -34,7 +35,7 @@ Change: 2020-03-06 01:01:21.855586110 +0000
 <pre><code> vi nginx.conf
 </code></pre>
 <p>修改后，可以发现Inode变了。</p>
-<pre><code>root@rancher:/home/lcx/aimp.fornt# stat  config.js 
+<pre><code>root@rancher:/home/llx/test# stat  config.js 
   File: config.js
   Size: 215       	Blocks: 8          IO Block: 4096   regular file
 Device: 802h/2050d	Inode: 1579271     Links: 1

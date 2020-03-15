@@ -8,7 +8,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="shortcut icon" href="https://ghostloda.github.io/favicon.ico?v=1583832931884">
+<link rel="shortcut icon" href="https://ghostloda.github.io/favicon.ico?v=1584267965355">
 <link rel="stylesheet" href="https://ghostloda.github.io/styles/main.css">
 
 
@@ -35,7 +35,7 @@
   <div class="top-container" data-aos="fade-right">
     <div class="top-header-container">
       <a class="site-title-container" href="https://ghostloda.github.io">
-        <img src="https://ghostloda.github.io/images/avatar.png?v=1583832931884" class="site-logo">
+        <img src="https://ghostloda.github.io/images/avatar.png?v=1584267965355" class="site-logo">
         <h1 class="site-title">Loda</h1>
       </a>
       <div class="menu-btn" @click="menuVisible = !menuVisible">
@@ -106,8 +106,9 @@
             <div class="post-content" v-pre>
               <p>docker直接修改挂载文件，理论上是可以直接反应在容器内部的，他们共享一个文件，为何在宿主机内修改无效呢，而你以为只有重启才会使修改生效？其实不是的。</p>
 <p>如果直接用vi编辑宿主机文件,这是因为用vi编辑保存时会修改文件的inode，<code>Linux</code>系统内部不使用文件名，而是使用<code>inode号码</code>识别文件。对于系统来说文件名只是<code>inode号码</code>便于识别的别称</p>
-<p>修改前：</p>
-<pre><code>root@rancher:/home/lcx/aimp.fornt# stat  config.js 
+<p>修改前：<br>
+l</p>
+<pre><code>root@rancher:/home/llx/test# stat  config.js 
   File: config.js
   Size: 215       	Blocks: 8          IO Block: 4096   regular file
 Device: 802h/2050d	Inode: 1577292     Links: 1
@@ -122,7 +123,7 @@ Change: 2020-03-06 01:01:21.855586110 +0000
 <pre><code> vi nginx.conf
 </code></pre>
 <p>修改后，可以发现Inode变了。</p>
-<pre><code>root@rancher:/home/lcx/aimp.fornt# stat  config.js 
+<pre><code>root@rancher:/home/llx/test# stat  config.js 
   File: config.js
   Size: 215       	Blocks: 8          IO Block: 4096   regular file
 Device: 802h/2050d	Inode: 1579271     Links: 1
